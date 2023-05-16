@@ -37,11 +37,11 @@ public class CastingPractice {
 		int c = sc.nextInt();
 
 		int sum = a+b+c;
-		float average = (((float)(a + b+ c))/3);
+		float average = ((float)(a + b+ c))/3;
 		
 //		System.out.println("총점 : " + (a + b+ c));
 		System.out.println("총점 : " + sum);
-//		System.out.printf("평균 : %.2f", (((float)(a + b+ c))/3));
+//		System.out.printf("평균 : %.2f", ((float)(a + b+ c))/3);
 		System.out.printf("평균 : %.2f", average);
 		
 	}
