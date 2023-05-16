@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CastingPractice {
 	public static void main(String args[]){
 		CastingPractice cp = new CastingPractice();
-//		cp.method1();
+		cp.method1();
 		cp.method2();
 		
 	}
@@ -14,13 +14,14 @@ public class CastingPractice {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("문자 : ");
-		String a = sc.next();
+		char a = sc.next().charAt(0);
 		
-		String b = sc.nextLine();
 		
-		System.out.println("A unicode : " + a);
-		System.out.println("B unicode : " + b);
+		System.out.printf("A unicode : %d\n", (int)a);
+		System.out.printf("B unicode : %d", (int)a+1);
+		
 	}
+	
 	
 	public void method2() {
 		Scanner sc = new Scanner(System.in);
@@ -33,11 +34,10 @@ public class CastingPractice {
 		
 		System.out.print("수학 : ");
 		int c = sc.nextInt();
-		
+	
 		
 		System.out.println("총점 : " + (a + b+ c));
-		System.out.printf("");
-//		System.out.print("평균 : " + ((a + b+ c)/3));
+		System.out.printf("평균 : %.2f", (((float)(a + b+ c))/3));
 		
 	}
 	
