@@ -11,8 +11,8 @@ public class VariablePractice {
 		VariablePractice vp = new VariablePractice();
 //		vp.method1();
 //		vp.method2();
-		vp.method3();
-//		vp.method4();
+//		vp.method3();
+		vp.method4();
 	}
 
 	public void method1() {
@@ -44,7 +44,7 @@ public class VariablePractice {
 		int x = 5;
 		int y = 7;
 		int z = 9;
-		int a = 0;
+		int a;
 		
 		a = x;
 		x = y;
@@ -62,7 +62,7 @@ public class VariablePractice {
 		System.out.print("문자열을 입력하세요 : ");
 		String line = sc.next();
 		char word = line.charAt(0);
-		char word2 = line.charAt(7);
+		char word2 = line.charAt(line.length()-1);
 		
 		System.out.println("첫번째 문자 : " + word);
 		System.out.println("마지막 문자 : " + word2);
