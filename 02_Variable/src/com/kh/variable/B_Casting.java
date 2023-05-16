@@ -88,7 +88,7 @@ public class B_Casting {
 		int num = 'A';
 		System.out.println("num : " + num);
 		
-		char ch = 52143;
+		char ch = 50000;
 		System.out.println("ch : " + ch);
 	}
 	

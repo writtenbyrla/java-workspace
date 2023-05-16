@@ -60,11 +60,11 @@ public class VariablePractice {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("문자열을 입력하세요 : ");
-		String line = sc.next();
-		char word = line.charAt(0);
-		char word2 = line.charAt(line.length()-1);
+		String st = sc.next();
+		char ch = st.charAt(0);
+		char ch2 = st.charAt(st.length()-1);
 		
-		System.out.println("첫번째 문자 : " + word);
-		System.out.println("마지막 문자 : " + word2);
+		System.out.println("첫번째 문자 : " + ch);
+		System.out.println("마지막 문자 : " + ch2);
 	}
 }
