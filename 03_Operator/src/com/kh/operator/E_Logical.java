@@ -18,7 +18,7 @@ public class E_Logical {
 //		e.method1();
 //		e.method2();
 		e.method3();
-		
+
 	}
 	
 	public void method1() {
@@ -62,21 +62,13 @@ public class E_Logical {
 	 */
 	public void method3() {
 		
-//		boolean result = false;
-		
 		Scanner sc = new Scanner(System.in);
-		char c = sc.nextLine().charAt(0);
 		
-		System.out.println(c + "는 대문자인가요? " + ((c >= 'A') && (c <= 'Z')));
+		System.out.print("문자를 입력해 주세요. > ");
+		char ch = sc.nextLine().charAt(0);
 		
-		
-		
-//		System.out.print("문자를 입력해 주세요. > ");
-//		int i = (int)c;
-//		result = (i>=65) && (i<=90);
-//		
-//		System.out.println(c + "는 대문자인가요? " + result);
-//		
+		System.out.println(ch + "는 대문자인가요? " + ((ch >= 'A') && (ch <= 'Z')));
+
 	}
 	
 }
