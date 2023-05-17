@@ -19,5 +19,6 @@ public class A_LogicalNagation {
 	
 	b1 = !b2;
 	System.out.println("b1의 부정 : " + !!b1);
+	System.out.println("b1의 부정 : " + !!b1);
 	}
 }

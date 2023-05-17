@@ -100,5 +100,4 @@ public class OperatorPractice {
 		
 		System.out.println("필요한 바구니의 수 : " + result );
 	}
-	
 }
