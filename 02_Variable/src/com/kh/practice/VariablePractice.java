@@ -62,6 +62,7 @@ public class VariablePractice {
 		System.out.print("문자열을 입력하세요 : ");
 		String st = sc.next();
 		char ch = st.charAt(0);
+//		char ch2 = st.charAt(7);
 		char ch2 = st.charAt(st.length()-1);
 		
 		System.out.println("첫번째 문자 : " + ch);

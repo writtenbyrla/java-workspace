@@ -17,9 +17,8 @@ public class CastingPractice {
 		char ch = sc.next().charAt(0);
 		int i = (int)ch;
 		
-		
-		System.out.printf("A unicode : %d\n", i);
-		System.out.printf("B unicode : %d", i+1);
+		System.out.printf("%c unicode : %d\n", ch, i);
+		System.out.printf("%c unicode : %d", ch+1, i+1);
 		
 	}
 	
