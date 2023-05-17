@@ -57,7 +57,7 @@ public class OperatorPractice {
 		System.out.print("입력3 : ");
 		int num3 = sc.nextInt();
 		
-		String result = (num1 == num2) && (num2 == num3) && (num3 == num1) ? "true" : "false";
+		String result = (num1 == num2) && (num2 == num3) && (num1 == num3) ? "true" : "false";
 		System.out.println(result);
 		
 	}
@@ -93,9 +93,12 @@ public class OperatorPractice {
 		System.out.print("바구니의 크기 : ");
 		int num2 = sc.nextInt();
 		
-		int num3 = ( num1 / num2 ) + 1 ;
+		int num3 = num1 / num2 ;
+		int num4 = num1 % num2 ; 
 		
-		System.out.println("필요한 바구니의 수 : " + num3);
+		int result = (num4 % 10 == 0)? num3 : num3+1 ;
+		
+		System.out.println("필요한 바구니의 수 : " + result );
 	}
 	
 }
