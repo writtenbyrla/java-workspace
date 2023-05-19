@@ -95,7 +95,7 @@ class LoopPractice {
     public void method4() {
     	for(int i = 0; ;i++) {
     		double random = Math.random();
-    		random = Math.random()*10;
+    		random = Math.random()*10+1;
     		int num = (int)random;
 
     		System.out.println(num);
@@ -109,17 +109,49 @@ class LoopPractice {
 
     /*
         주사위를 10번 굴렸을 때 각 눈의 수가 몇 번 나왔는지 출력하세요. (random 사용!)
-
-        1 : 3
-        2 : 2
-        3 : 1
-        4 : 0
-        5 : 4
-        6 : 0
-
+        1 : 3 
+        2 : 2 
+        3 : 1 
+        4 : 0 
+        5 : 4 
+        6 : 0 
      */
     public void method5() {
 
+    	int sum1 = 0;
+    	int sum2 = 0;
+    	int sum3 = 0;
+    	int sum4 = 0;
+    	int sum5 = 0;
+    	int sum6 = 0;
+
+    	for(int i=1; i<=10; i++) {
+    		double random = Math.random();
+    		random = Math.random()*6+1;
+    		int num = (int)random;
+
+
+    		if(num==1) {
+    			sum1 += 1;
+    		}else if(num==2) {
+    			sum2 += 1;
+    		}else if(num==3) {
+    			sum3 += 1;
+    		}else if(num==4) {
+    			sum4 += 1;
+    		}else if(num==5) {
+    			sum5 += 1;
+    		}else {
+    			sum6 += 1;
+    		}
+
+    	System.out.println("1 : " + sum1);
+    	System.out.println("2 : " + sum2);
+    	System.out.println("3 : " + sum3);
+    	System.out.println("4 : " + sum4);
+    	System.out.println("5 : " + sum5);
+    	System.out.println("6 : " + sum6);
+    	}  	
     }
 
     /*
@@ -144,16 +176,85 @@ class LoopPractice {
         박신우 : 보
         이겼습니다 !
     */
+    
     public void method6() {
 
+    	//문자열: 사용자(user1) 컴퓨터(com1)
+    	//숫자: 사용자(user2) 컴퓨터(com2)
+
+    	System.out.print("당신의 이름을 입력해주세요 : ");
+    	String name = sc.next();
+
+    	for(int i=0;;i++) {
+    		System.out.print("가위바위보 : ");
+    		String user1 = sc.next();
+
+    		//컴퓨터 랜덤 수(com2)
+    		double random = (Math.random()*3)+1;
+    		int com2 = (int)random;
+
+    		// 컴퓨터 랜덤 수 문자열로 변환(com1)
+    		String com1 = "";
+    		switch(com2) {
+    		case 1: 
+    			com1="가위";
+    			break;
+    		case 2: 
+    			com1="바위";
+    			break;
+    		case 3:
+    			com1="보";
+    			break;
+    		}
+
+    		// 사용자 입력 숫자로 변환(user2)
+    		int user2 = 0;
+    		switch(user1) {
+    		case "가위" :
+    			user2 = 1;
+    			break;
+    		case "바위" :
+    			user2 = 2;
+    			break;
+    		case "보" :
+    			user2 = 3;
+    			break;
+    		}
+
+    		System.out.println(name + " : " + user1);
+    		System.out.println("컴퓨터 : " + com1);
+
+    		int result = user2 - com2;
+    		int sum1 = 0; // 비긴 횟수
+    		int sum2 = 0; // 진 횟수
+    		int sum3 = 0; // 이긴 횟수
+
+    		if(result==0){
+    			System.out.println("비겼습니다.");
+    			sum1 += 1;
+    		} else if((result==-1)||(result==2)) {
+    			System.out.println("졌습니다 ㅠㅠ");
+    			sum2 += 1;
+    		} else {
+    			System.out.println("이겼습니다 !");
+    			sum3 += 1;
+    			System.out.println("이긴 횟수 : " + sum3);
+    			System.out.println("비긴 횟수 : " + sum1);
+    			System.out.println("진 횟수 : " + sum2);
+    			break;
+    		}
+    		System.out.println();
+    	}
     }
-    
+
     public static void main(String [] args) {
     	LoopPractice lp = new LoopPractice();
 //    	lp.method1();
 //    	lp.method2();
 //    	lp.method3();
-    	lp.method4();
+//    	lp.method4();
+//    	lp.method5();
+    	lp.method6();
     	
     }
 
