@@ -207,7 +207,7 @@ public class ConditionPractice {
     		System.out.println("로그인 성공!");
     	} else if (pw != 1234) {
     		System.out.println("비밀번호가 틀렸습니다.");
-    	} else if (id != "happy") {
+    	} else if (!"happy".equals(id)) {
     		System.out.println("아이디가 틀렸습니다.");
     	}
     }
@@ -426,11 +426,11 @@ public class ConditionPractice {
 //    	cp.practice4();
 //    	cp.practice5();
 //    	cp.practice6();
-//    	cp.practice7();
+    	cp.practice7();
 //    	cp.practice8();
 //    	cp.practice9();
 //    	cp.practice10();
-    	cp.practice11();
+//    	cp.practice11();
     }
     
 }
