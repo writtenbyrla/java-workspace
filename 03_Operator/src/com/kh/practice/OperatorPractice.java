@@ -11,7 +11,7 @@ public class OperatorPractice {
 //		op.method3();
 //		op.method4();
 //		op.method5();
-//		op.method6();
+		op.method6();
 		
 	}
 	
@@ -90,8 +90,10 @@ public class OperatorPractice {
 		System.out.print("바구니의 크기 : ");
 		int num2 = sc.nextInt();
 		
-		int result = ((num1 % num2) % 10 == 0)? (num1 / num2) : (num1 / num2)+1 ;
 		
+		int result =num1/num2 + (((num1 % num2) % 10 == 0) ? 0 : 1);
 		System.out.println("필요한 바구니의 수 : " + result );
 	}
+	
+	
 }

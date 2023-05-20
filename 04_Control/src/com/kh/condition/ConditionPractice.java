@@ -118,19 +118,16 @@ public class ConditionPractice {
     	int sum = score1 + score2 + score3;
     	float average = (float) (score1 + score2 + score3) / 3;
     	
+    	
+    	System.out.println("국어 : "+ score1);
+    	System.out.println("수학 : "+ score2);
+    	System.out.println("영어 : "+ score3);
+    	System.out.println("합계 : "+ sum);
+    	System.out.println("평균 : "+ average);
+    	
     	if((score1 >= 40) && (score2 >= 40) && (score3 >= 40) && (average>=60)) {
-    		System.out.println("국어 : "+ score1);
-    		System.out.println("수학 : "+ score2);
-    		System.out.println("영어 : "+ score3);
-    		System.out.println("합계 : "+ sum);
-    		System.out.println("평균 : "+ average);
     		System.out.println("축하합니다, 합격입니다!");
     	} else {
-    		System.out.println("국어 : "+ score1);
-    		System.out.println("수학 : "+ score2);
-    		System.out.println("영어 : "+ score3);
-    		System.out.println("합계 : "+ sum);
-    		System.out.println("평균 : "+ average);
     		System.out.println("불합격입니다.");
     	}
     }

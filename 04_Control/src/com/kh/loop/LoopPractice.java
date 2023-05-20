@@ -185,6 +185,11 @@ class LoopPractice {
     	System.out.print("당신의 이름을 입력해주세요 : ");
     	String name = sc.next();
 
+    	String com1 = "";
+    	int sum1 = 0; // 비긴 횟수
+    	int sum2 = 0; // 진 횟수
+    	int sum3 = 0; // 이긴 횟수
+    	
     	for(int i=0;;i++) {
     		System.out.print("가위바위보 : ");
     		String user1 = sc.next();
@@ -194,7 +199,6 @@ class LoopPractice {
     		int com2 = (int)random;
 
     		// 컴퓨터 랜덤 수 문자열로 변환(com1)
-    		String com1 = "";
     		switch(com2) {
     		case 1: 
     			com1="가위";
@@ -225,9 +229,6 @@ class LoopPractice {
     		System.out.println("컴퓨터 : " + com1);
 
     		int result = user2 - com2;
-    		int sum1 = 0; // 비긴 횟수
-    		int sum2 = 0; // 진 횟수
-    		int sum3 = 0; // 이긴 횟수
 
     		if(result==0){
     			System.out.println("비겼습니다.");
