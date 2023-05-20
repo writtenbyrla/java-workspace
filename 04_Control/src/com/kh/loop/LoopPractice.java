@@ -95,7 +95,8 @@ class LoopPractice {
     public void method4() {
     	for(int i = 0; ;i++) {
     		double random = Math.random();
-    		random = Math.random()*10+1;
+    		random = Math.random()*11;
+
     		int num = (int)random;
 
     		System.out.println(num);
@@ -239,13 +240,13 @@ class LoopPractice {
     		} else {
     			System.out.println("이겼습니다 !");
     			sum3 += 1;
-    			System.out.println("이긴 횟수 : " + sum3);
-    			System.out.println("비긴 횟수 : " + sum1);
-    			System.out.println("진 횟수 : " + sum2);
     			break;
     		}
     		System.out.println();
     	}
+    	System.out.println("이긴 횟수 : " + sum3); 
+    	System.out.println("비긴 횟수 : " + sum1); 
+    	System.out.println("진 횟수 : " + sum2);
     }
 
     public static void main(String [] args) {
