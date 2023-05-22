@@ -68,12 +68,12 @@ class LoopPractice {
     	System.out.print("문자 : ");
     	char ch = sc.next().charAt(0);
     	
-    	int num = 0;
+    	int num = 0; // 문자 개수
     	
     	for(int i=0; i<str.length(); i++) {
-    		char a = str.charAt(i);
+    		char a = str.charAt(i); // 문자열의 i번째 문자
     		
-    		if(a == ch) {
+    		if(a == ch) { // 일치하면 1씩 카운트
     			num+=1;
     		} 
     	}
