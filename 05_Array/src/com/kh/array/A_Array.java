@@ -30,7 +30,7 @@ public class A_Array {
 	 */
 	
 	//배열의 선언과 초기화
-	// 1) 배열 변수와 인덱스를 이요해 초기화
+	// 1) 배열 변수와 인덱스를 이용해 초기화
 	public void method1() {
 		
 		int [] score = new int[5]; // 배열의 크기를 지정하지 않으면 에러!
@@ -144,11 +144,11 @@ public class A_Array {
 		System.out.println(Arrays.toString(number)); 
 		System.out.println(Arrays.toString(copy)); 
 		
-		System.out.println(Arrays.toString(number)==Arrays.toString(copy)); // false
-		
-		System.out.println(number.hashCode()); // 객체를 식별할 하나의 정수값
-		System.out.println(copy.hashCode()); // 객체를 식별할 하나의 정수값
-		System.out.println(number.hashCode()==copy.hashCode()); // true
+//		System.out.println(Arrays.toString(number)==Arrays.toString(copy)); // false
+//		
+//		System.out.println(number.hashCode()); // 객체를 식별할 하나의 정수값
+//		System.out.println(copy.hashCode()); // 객체를 식별할 하나의 정수값
+//		System.out.println(number.hashCode()==copy.hashCode()); // true
 	}
 	
 	// 2. 깊은 복사: 동일한 새로운 배열을 하나 생성해서 내부의 값들도 함께 복사

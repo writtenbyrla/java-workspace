@@ -64,22 +64,13 @@ public class B_Dimension {
 	public void method2() {
 		int[][] arr = new int[3][5];
 		int value = 1;
-		
+
 		for(int i = 0; i<arr.length; i++) {
 			for(int j=0; j<arr[i].length; j++) {
 				arr[i][j]=value++;
 			}
 		}
-		
-		// 출력
-		/*
-		 * 향상된 for문
-		 * - 자바 5부터 배열 및 컬렉션 객체를 좀 더 쉽게 처리할 목적으로 제공
-		 * - 증감식을 사용하지 않고 배열 및 컬렉션의 요소 개수만큼 반복하고 for문을 종료
-		 */
-//		for(int s : score) {
-//			System.out.println(s);
-//		}
+
 		for(int[] i : arr) {
 			for(int j:i) {
 				System.out.println(j);

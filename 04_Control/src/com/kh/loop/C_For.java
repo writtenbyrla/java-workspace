@@ -130,7 +130,7 @@ public class C_For {
 //		System.out.println(random); // 1.0<= random < 11.0
 		
 		int num = (int)random;
-		System.out.println(num);
+//		System.out.println(num);
 		
 		int sum = 0;
 		for(int i=1; i<=num; i++) {
@@ -263,13 +263,27 @@ public class C_For {
 	 * *****	i=5 j=1 j=2 j=3 j=4 j=5
 	 */
 	public void method15() {
+
+		//수업
 		for(int i=1; i<=5; i++) {
 			for(int j=1; j<=i; j++) {
 				System.out.print("*");
 				if(i==j) System.out.println();
 			}
 		}
+
+		//내가 푼 것
+		for(int i=0; i<5; i++) {
+			for(int j=0; j<5; j++) {
+				if(j<=i) {
+					System.out.print("*");
+				}
+			}
+			System.out.println();
+		}
 	}
+	
+	
 	
 	/*
 	 *      * i=1 j=1~4( ) j=5(*)
