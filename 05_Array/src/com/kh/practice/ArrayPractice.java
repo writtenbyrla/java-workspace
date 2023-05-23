@@ -57,23 +57,28 @@ public class ArrayPractice {
 	 * 
 	 * */
 	public void method3() {
-		String[] menu = new String[] {"김밥", "오므라이스", "돈까스", "라면"};
-//										0		1			2		3
+
+		String[] menu = new String[] {"김밥", "우동", "떡볶이", "라면"};
+
 		System.out.print("메뉴 입력 > ");
-		String input = sc.next();
-		
-		
-		
-		for(int i=0; i<menu.length; i++) {
-			
-			if(input.equals(menu[i])) {
-				System.out.println("배달 가능");
-			} else {
-				System.out.println("배달 불가능");
+		String input = sc.nextLine();
+
+		String result="";
+
+		for(int i=0; i < menu.length; i++) {	
+
+			if(input.equals(menu[i])==true) {
+				result = "배달 가능";
+				break;
 			}
-		} 
+
+			if(input.equals(menu[i])==false) {
+				result = "배달 불가능";
+			}
+		}
+		System.out.println(result);
 	}
-			
+
 
 	
 	/*
