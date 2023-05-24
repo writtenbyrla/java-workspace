@@ -119,6 +119,17 @@ class LoopPractice {
      */
     public void method5() {
 
+    	// 배열 이용
+    	int[] counts = new int[6];
+        for (int i = 0; i < 10; i++) {
+            int randomValue = (int) (Math.random() * 6) + 1;
+            counts[randomValue - 1]++;
+        }
+        for (int i = 0; i < 6; i++) {
+            System.out.println((i + 1) + " : " + counts[i]);
+        }
+    	
+    	
     	int sum1 = 0;
     	int sum2 = 0;
     	int sum3 = 0;
