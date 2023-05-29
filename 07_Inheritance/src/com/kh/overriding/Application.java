@@ -7,7 +7,7 @@ public class Application {
 
 	public static void main(String[] args) {
 		Customer customer1 = new Customer("홍수민");
-		Customer customer2 = new Customer("신수민");
+		Customer customer2 = new Customer("홍수민");
 		
 		System.out.println(customer1);
 		System.out.println(customer2);
@@ -15,7 +15,7 @@ public class Application {
 		System.out.println(customer1.equals(customer2)); // 원래는 name이 같아도 false, Customer 클래스에서 equals 재정의하면 true
 		
 		VIPCustomer customer3 = new VIPCustomer("최승환");
-		VIPCustomer customer4 = new VIPCustomer("박승환");
+		VIPCustomer customer4 = new VIPCustomer("최승환");
 		
 		System.out.println(customer3.equals(customer4)); // name이 같으면 true, customer에서 재정의한 것을 상속했기 때문에
 		
