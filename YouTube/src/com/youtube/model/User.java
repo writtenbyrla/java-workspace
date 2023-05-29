@@ -10,8 +10,9 @@ public class User {
 	private String nickName;
 	private char gender;
 	
-	public User() {
-	}
+	Video video;
+	
+	public User() {}
 
 	public User(String email, String phone, String id, String password, String nickName, char gender) {
 		this.email = email;
