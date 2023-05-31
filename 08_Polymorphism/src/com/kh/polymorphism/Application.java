@@ -1,5 +1,6 @@
 package com.kh.polymorphism;
 
+import com.kh.polymorphism.controller.EmployeeController;
 import com.kh.polymorphism.model.child.Engineer;
 import com.kh.polymorphism.model.child.Manager;
 import com.kh.polymorphism.model.child.Secretary;
@@ -14,7 +15,7 @@ import com.kh.polymorphism.model.parent.Employee;
 public class Application {
 
 	public static void main(String[] args) {
-		Employee e1 = new Employee("이수근", 12000);
+		Employee e1 = new Employee("이수근", 12000); // 144000
 		Manager m1 = new Manager("강호동", 23000, "체육부");
 		Engineer eg1 = new Engineer("김영철", 56000, "Java", 200);
 		Secretary s1 = new Secretary("서장훈", 34000, "강호동");
@@ -27,9 +28,9 @@ public class Application {
 		System.out.println();
 		
 		// 다형성 방식으로 객체 생성
-		Employee e2 = new Manager("강호동", 23000, "체육부");
-		Employee e3 = new Engineer("김영철", 56000, "Java", 200);
-		Employee e4 = new Secretary("서장훈", 34000, "강호동");
+		Employee e2 = new Manager("강호동", 23000, "체육부"); // 276000
+		Employee e3 = new Engineer("김영철", 56000, "Java", 200); // 672000
+		Employee e4 = new Secretary("서장훈", 34000, "강호동"); // 408000
 		
 		System.out.println(e2);
 		System.out.println(e3);
@@ -46,6 +47,16 @@ public class Application {
 		
 		System.out.println();
 		
+		// 이름으로 사람 찾기
+		EmployeeController ec = new EmployeeController();
+		Employee find = ec.findEmployeeByName(empArr, "김영철");
+		System.out.println(find);
+		
+		// 연봉은?
+		System.out.println(find.getName() + "의 연봉 : " + ec.getAnnualSalary(find));
+		
+		// 전체 사람들의 연봉 총합은?
+		System.out.println("연봉 총 합계 : " + ec.getTotalCoast(empArr));
 		
 	}
 
