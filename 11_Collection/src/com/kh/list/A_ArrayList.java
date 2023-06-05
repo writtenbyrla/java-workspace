@@ -108,8 +108,7 @@ public class A_ArrayList {
 			name[i] = list.get(i).getName();
 		}
 		System.out.println(Arrays.toString(name));
-		
-		
+
 		// 서울숲에 사는 사람들만 출력
 		for(int i=0; i<list.size(); i++) {
 			if(list.get(i).getAddr().equals("서울숲")) {
