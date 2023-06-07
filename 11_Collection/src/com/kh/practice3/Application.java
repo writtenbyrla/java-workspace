@@ -1,5 +1,6 @@
 package com.kh.practice3;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -25,36 +26,36 @@ public class Application {
 	}
 	
 	public void mainMenu() {
-		boolean check = true;
-		
-		while(check) {
-			System.out.println("****** 메뉴 ******");
-			System.out.println("1. 직원 메뉴");
-			System.out.println("2. 손님 메뉴");
-			System.out.println("9. 종료");
-			System.out.print("메뉴 번호 선택 : ");
-			switch(Integer.parseInt(sc.nextLine())) {
-			case 1:
-				adminMenu();
-				break;
-			case 2:
-				try {
+		try {
+			boolean check = true;
+			while(check) {
+				System.out.println("****** 메뉴 ******");
+				System.out.println("1. 직원 메뉴");
+				System.out.println("2. 손님 메뉴");
+				System.out.println("9. 종료");
+				System.out.print("메뉴 번호 선택 : ");
+				switch(Integer.parseInt(sc.nextLine())) {
+				case 1:
+					adminMenu();
+					break;
+				case 2:
 					customerMenu();
-				} catch (Exception e) {
-					e.printStackTrace();
+					break;
+				case 9:
+					check = false;
+					System.out.println("프로그램 종료");
+					break;
 				}
-				break;
-			case 9:
-				check = false;
-				System.out.println("프로그램 종료");
-				break;
-			}
+			} 
+		}catch(Exception e) {
+			System.out.println("잘못 입력하였습니다. 다시 입력해주세요.");
+			mainMenu();
 		}
-	
+
 	}
 	
 	public void adminMenu() {
-
+		try {
 		System.out.println("****** 직원 메뉴 ******");
 		System.out.println("1. 새 농산물 추가");
 		System.out.println("2. 농산물 삭제");
@@ -78,7 +79,10 @@ public class Application {
 		case 9:
 			break;
 		}
-		
+		} catch(Exception e) {
+			System.out.println("잘못 입력하였습니다. 다시 입력해주세요.");
+			mainMenu();
+		}
 	}
 	
 	public void customerMenu() throws Exception {
@@ -108,7 +112,6 @@ public class Application {
 	}
 	
 	public void addNewKind() {
-		
 		/*
 		 * 1. 과일 / 2. 채소 / 3. 견과 를 통해 번호로 종류를 받고 추가할 농산물의 이름과 수량도 받음.
 		 * 없는 번호를 선택하면 "잘못 입력하셨습니다. 다시 입력해주세요."가 출력되며 다시 번호를 받고,
@@ -119,10 +122,8 @@ public class Application {
 		 * false면 "새 농산물 추가에 실패하였습니다. 다시 입력해주세요." 출력되며 다시 번호를 받음.
 		 * 
 		 * */
-
-
 		try {
-			String k = "";
+			String kind = "";
 			int select = 0;
 			
 			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
@@ -135,28 +136,26 @@ public class Application {
 			
 			switch(select) {
 			case 1: 
-				k = "과일";
+				kind = "과일";
 				break;
 
 			case 2:
-				k = "채소";
+				kind = "채소";
 				break;
 
 			case 3:
-				k = "견과";
+				kind = "견과";
 				break;
 			} 
 
-
-			Farm f = new Farm(k, name);
-			f.setKind(k);
+			Farm f = new Farm(kind, name);
+			f.setKind(kind);
 			f.setName(name);
 
 			if(fc.addNewKind(f, amount)) {
 				System.out.println("새 농산물이 추가되었습니다.");
-			} else {
+			} else if(!fc.addNewKind(f, amount)) {
 				System.out.println("새 농산물 추가에 실패하였습니다. 다시 입력해주세요.");
-//				addNewKind();
 			}
 		} catch (Exception e) {
 			System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
@@ -200,21 +199,21 @@ public class Application {
 					kind = "견과";
 					break;
 				}
+				System.out.print("삭제할 이름 : ");
+				String name = sc.nextLine();
+				
+				Farm f = new Farm(kind, name);
+				f.setKind(kind);
+				f.setName(name);
+				
+				if(fc.removeKind(f)) {
+					System.out.println("농산물 삭제에 성공하였습니다.");
+				} else {
+					System.out.println("농산물 삭제에 실패하였습니다. 다시 입력해주세요.");
+					removeKind();
+				}
 			} catch(Exception e) {
 				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
-				removeKind();
-			}
-			System.out.print("삭제할 이름 : ");
-			String name = sc.nextLine();
-			
-			Farm f = new Farm(kind, name);
-			f.setKind(kind);
-			f.setName(name);
-			
-			if(fc.removeKind(f)) {
-				System.out.println("농산물 삭제에 성공하였습니다.");
-			} else {
-				System.out.println("농산물 삭제에 실패하였습니다. 다시 입력해주세요.");
 				removeKind();
 			}
 		}
@@ -269,9 +268,9 @@ public class Application {
 		f.setKind(name);
 		
 		if(fc.changeAmount(f, amount)) {
-			System.out.println("농산물 삭제에 성공하였습니다.");
+			System.out.println("농산물 수량이 수정되었습니다.");
 		} else {
-			System.out.println("농산물 삭제에 실패하였습니다. 다시 입력해주세요.");
+			System.out.println("농산물 수량 수정에 실패하였습니다. 다시 입력해주세요.");
 			changeAmount();
 		}
 	}
@@ -279,10 +278,8 @@ public class Application {
 	public void printFarm() {
 		
 		// fc의 printFarm()의 반환 값을 이용하여 keySet()을 통해 "종류 : 이름(n개)" 형식으로 출력
-		
-		
 		for(Farm farm : fc.printFarm().keySet()) {
-			System.out.println(farm);
+			System.out.println(farm.getKind() + " : " + farm.getName() + "(" +  "개)");
 		}
 		
 		

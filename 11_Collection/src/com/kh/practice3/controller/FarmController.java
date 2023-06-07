@@ -13,12 +13,10 @@ public class FarmController {
 	private ArrayList<Farm> list = new ArrayList<>();      // 고객이 구매한 농산물 저장용
 	
 	public boolean addNewKind(Farm f, int amount) {
-		
 		// 전달 받은 f가 hMap 안에 key로 존재하지 않을 때
 		// f와 amount를 각각 키와 값으로 저장 후 true 반환
 		
 		// 존재할 경우 false 반환
-		
 
 		if(!hMap.containsKey(f)) {
 			hMap.put(f, amount);
@@ -34,11 +32,9 @@ public class FarmController {
 		
 		// 존재하지 않을 경우 false 반환
 		
-		for(int i=0; i<hMap.size(); i++) {
-			if(hMap.equals(f)) {
-				hMap.remove(f);
-				return true;
-			}
+		if(hMap.keySet().equals(f)) {
+			hMap.remove(f);
+			return true;
 		}
 		return false;
 	}

@@ -33,7 +33,7 @@ public class Farm {
 
 	@Override
 	public String toString() {
-		return "Farm [kind=" + kind + ", name=" + name + "]";
+		return kind + " : " + name ;
 	}
 	
 }
