@@ -1,29 +1,35 @@
 package com.booklibrary.controller;
 
+import java.util.ArrayList;
+
 import com.booklibrary.model.Book;
 
 public class BookController {
 
-	Book[] bookList = new Book[5];
-	int index = 0;
+	ArrayList<Book> bookList = new ArrayList<>();
 	
-	public void upload(Book book) { // 책 업로드
-		bookList[index++] = book;
+	// C : 책 업로드 
+	public void upload(Book book) {
+		bookList.add(book);
 	}
 	
-	public Book[] bookList() { // 책 목록
+	// R : 책 목록 보기
+	public ArrayList<Book> bookList() { 
 		return bookList;
 	}
 	
-	public Book viewBook(int index) { // 책 1권 보기
-		return bookList[index];
+	// R : 책 1권 보기
+	public Book viewBook(int index) {
+		return bookList.get(index);
 	}
 	
+	// U : 책 수정
 	public void updateBook(int index, Book book) { // 책 수정
-		bookList[index] = book;
+		bookList.set(index, book);
 	}
 	
-	public boolean deletebook() { // 책 지우기
-		return false;
+	// D : 책 삭제
+	public boolean deletebook(Book book) { // 책 지우기
+		return bookList.remove(book);
 	}
 }
