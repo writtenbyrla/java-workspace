@@ -7,10 +7,13 @@ import com.booklibrary.model.Book;
 public class BookController {
 
 	ArrayList<Book> bookList = new ArrayList<>();
+	UserController uc = new UserController();
 	
 	// C : 책 업로드 
-	public void upload(Book book) {
-		bookList.add(book);
+	public void upload(String id, String password, Book book) {
+		if(uc.login(id, password)) {
+			bookList.add(book);
+		}
 	}
 	
 	// R : 책 목록 보기

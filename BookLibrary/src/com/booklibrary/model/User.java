@@ -1,5 +1,7 @@
 package com.booklibrary.model;
 
+import java.util.List;
+
 public class User {
 
 	private String email;
@@ -9,19 +11,9 @@ public class User {
 	private String nickName;
 	private char gender;
 	
-	Book book;
+	List<Book> books;
 
 	public User(){}
-
-	public User(String email, String phone, String id, String password, String nickName, char gender, Book book) {
-		this.email = email;
-		this.phone = phone;
-		this.id = id;
-		this.password = password;
-		this.nickName = nickName;
-		this.gender = gender;
-		this.book = book;
-	}
 
 	public String getEmail() {
 		return email;
@@ -71,20 +63,18 @@ public class User {
 		this.gender = gender;
 	}
 
-	public Book getBook() {
-		return book;
+	public List<Book> getBooks() {
+		return books;
 	}
 
-	public void setBook(Book book) {
-		this.book = book;
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 
 	@Override
 	public String toString() {
 		return "User [email=" + email + ", phone=" + phone + ", id=" + id + ", password=" + password + ", nickName="
-				+ nickName + ", gender=" + gender + ", book=" + book + "]";
+				+ nickName + ", gender=" + gender + ", books=" + books + "]";
 	}
-	
-	
 	
 }
