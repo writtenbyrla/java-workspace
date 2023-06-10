@@ -1,6 +1,6 @@
-package com.booklibrary.impl;
+package com.bookreview.impl;
 
-import com.booklibrary.model.User;
+import com.bookreview.model.User;
 
 public interface UserControllerImpl {
 	

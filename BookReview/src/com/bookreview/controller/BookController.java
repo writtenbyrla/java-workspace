@@ -1,8 +1,8 @@
-package com.booklibrary.controller;
+package com.bookreview.controller;
 
 import java.util.ArrayList;
 
-import com.booklibrary.model.Book;
+import com.bookreview.model.Book;
 
 public class BookController {
 
