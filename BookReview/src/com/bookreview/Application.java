@@ -164,10 +164,12 @@ public class Application {
 			case 2:
 				System.out.print("변경할 휴대폰번호 입력: ");
 				uc.updatePhone(id, sc.nextLine());
+				System.out.println("휴대폰번호 변경에 성공하였습니다.");
 				break;
 			case 3: 
 				System.out.print("변경할 닉네임 입력: ");
 				uc.updateNickName(id, sc.nextLine());
+				System.out.println("닉네임 변경에 성공하였습니다.");
 				break;
 			default: 
 				throw new Exception();
@@ -190,12 +192,20 @@ public class Application {
 		System.out.print("업로드 날짜 입력 : ");
 		String date = sc.nextLine(); 
 		
-		rc.upload(new Review(title, writer, comment, date));
+		Review review = new Review(title, writer, comment, date);
+		if(rc.upload(review)){
+			System.out.println("리뷰가 등록되었습니다.");
+		} else {
+			System.out.println("리뷰 등록에 실패하였습니다.");
+		}
 	}
 	
 	// 리뷰 목록보기
 	public void reviewList() {
-		System.out.println(rc.reviewList());
+		System.out.println("***** 전체 리뷰 보기*****");
+		for(Review review : rc.reviewList()) {
+			System.out.println(review);
+		}
 	}
 	
 	
@@ -204,7 +214,19 @@ public class Application {
 		System.out.print("책 제목 입력: ");
 		String title = sc.nextLine();
 		
-		if(rc.updateReview(title)) {
+		Review review = new Review();
+		System.out.print("제목 수정 : ");
+		review.setTitle(sc.nextLine());
+		System.out.print("작가 수정 : ");
+		review.setWriter(sc.nextLine());
+		System.out.print("리뷰 수정 : ");
+		review.setComment(sc.nextLine());
+		System.out.print("업로드 날짜 : ");
+		review.setUploadAt(sc.nextLine());
+		
+		review = rc.updateReview(title, review); 
+		
+		if( review != null) {
 			System.out.println("리뷰가 수정되었습니다.");
 		} else {
 			System.out.println("잘못 입력하였습니다. 다시 입력하세요.");
@@ -214,10 +236,15 @@ public class Application {
 	
 	// 리뷰 삭제
 	public void deleteReview() {
-		System.out.print("책 제목 입력: ");
-		String title = sc.nextLine();
-		
-		rc.deleteReview(title);
+		System.out.print("삭제할 책 입력: ");
+		Review review = rc.deleteReview(sc.nextLine());
+
+		if(review != null){
+			System.out.println("리뷰가 삭제되었습니다.");
+		}else {
+			System.out.println("잘못 입력하였습니다. 다시 입력하세요.");
+			userMenu();
+		}
 	}
 	
 }
