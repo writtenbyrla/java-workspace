@@ -263,11 +263,11 @@ class LoopPractice {
     public static void main(String [] args) {
     	LoopPractice lp = new LoopPractice();
 //    	lp.method1();
-//    	lp.method2();
+    	lp.method2();
 //    	lp.method3();
 //    	lp.method4();
 //    	lp.method5();
-    	lp.method6();
+//    	lp.method6();
     	
     }
 

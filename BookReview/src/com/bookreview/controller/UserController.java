@@ -12,9 +12,17 @@ public class UserController {
 
 	// 회원가입
 	// id 중복되는지 확인 후 기존에 가입된 id 없으면 입력받은 user 정보 저장후 true값 반환 
-	public boolean signUp(String id, User u) { 
+//	public boolean signUp(String id, String password) { 
+//		if(!map.containsKey(id)) {
+//			map.put(id, password);
+//			return true;
+//		}
+//		return false;
+//	}
+	
+	public boolean signUp(String id, User user) {
 		if(!map.containsKey(id)) {
-			map.put(id, u);
+			map.put(id, user);
 			return true;
 		}
 		return false;

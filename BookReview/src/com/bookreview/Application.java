@@ -1,14 +1,18 @@
 package com.bookreview;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.bookreview.controller.ReviewController;
 import com.bookreview.controller.UserController;
+import com.bookreview.model.Review;
 import com.bookreview.model.User;
 
 public class Application {
 
 	private Scanner sc = new Scanner(System.in);
 	UserController uc = new UserController();
+	ReviewController rc = new ReviewController();
 	
 	
 	public static void main(String[] args) {
@@ -92,14 +96,30 @@ public class Application {
 		boolean check = true;
 		while(check) {
 			System.out.println("***** 회원 메뉴 *****");
-			System.out.println("1. 정보 수정");
-			System.out.println("2. 메인 메뉴로 돌아가기");
+			System.out.println("1. 회원 정보 수정");
+			System.out.println("2. 리뷰 등록");
+			System.out.println("3. 리뷰 목록 보기");
+			System.out.println("4. 리뷰 수정 ");
+			System.out.println("5. 리뷰 삭제");
+			System.out.println("9. 메인 메뉴로 돌아가기");
 			System.out.print("메뉴 번호 입력 : ");
 			switch(Integer.parseInt(sc.nextLine())) {
 			case 1: 
 				updateProfile();
 				break;
 			case 2: 
+				upload();
+				break;
+			case 3: 
+				reviewList();
+				break;
+			case 4: 
+				updateReview();
+				break;
+			case 5: 
+				deleteReview();
+				break;
+			case 9:
 				mainMenu();
 				break;
 			default: 
@@ -112,6 +132,7 @@ public class Application {
 		}
 	}
 	
+	// 회원 정보 수정
 	public void updateProfile() {
 		try {
 			System.out.println("***** 수정할 정보 선택 *****");
@@ -156,4 +177,47 @@ public class Application {
 			updateProfile();
 		}
 	}
+	
+	// 리뷰 업로드
+	public void upload() {
+//	String title, String writer, String comment, Date uploadAt
+		System.out.print("제목 입력 : ");
+		String title = sc.nextLine();
+		System.out.print("작가 입력 : ");
+		String writer = sc.nextLine();
+		System.out.print("리뷰 입력 : ");
+		String comment = sc.nextLine();
+		System.out.print("업로드 날짜 입력 : ");
+		String date = sc.nextLine(); 
+		
+		rc.upload(new Review(title, writer, comment, date));
+	}
+	
+	// 리뷰 목록보기
+	public void reviewList() {
+		System.out.println(rc.reviewList());
+	}
+	
+	
+	// 리뷰 수정
+	public void updateReview() {
+		System.out.print("책 제목 입력: ");
+		String title = sc.nextLine();
+		
+		if(rc.updateReview(title)) {
+			System.out.println("리뷰가 수정되었습니다.");
+		} else {
+			System.out.println("잘못 입력하였습니다. 다시 입력하세요.");
+			userMenu();
+		}
+	}
+	
+	// 리뷰 삭제
+	public void deleteReview() {
+		System.out.print("책 제목 입력: ");
+		String title = sc.nextLine();
+		
+		rc.deleteReview(title);
+	}
+	
 }

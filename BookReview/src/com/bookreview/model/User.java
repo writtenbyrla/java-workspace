@@ -10,10 +10,10 @@ public class User {
 	private String phone;
 	private String nickName;
 	private String email;
-	List<Book> books;
-
-	public User(){}
-
+	List<Review> review;
+	
+	public User() {}
+	
 	public User(String id, String password, String name, String phone, String nickName, String email) {
 		this.id = id;
 		this.password = password;
@@ -21,6 +21,17 @@ public class User {
 		this.phone = phone;
 		this.nickName = nickName;
 		this.email = email;
+	}
+	
+	public User(String id, String password, String name, String phone, String nickName, String email,
+			List<Review> review) {
+		this.id = id;
+		this.password = password;
+		this.name = name;
+		this.phone = phone;
+		this.nickName = nickName;
+		this.email = email;
+		this.review = review;
 	}
 
 	public String getId() {
@@ -47,6 +58,14 @@ public class User {
 		this.name = name;
 	}
 
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	public String getNickName() {
 		return nickName;
 	}
@@ -63,29 +82,21 @@ public class User {
 		this.email = email;
 	}
 
-	public List<Book> getBooks() {
-		return books;
+	public List<Review> getReview() {
+		return review;
 	}
 
-	public void setBooks(List<Book> books) {
-		this.books = books;
-	}
-	
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setReview(List<Review> review) {
+		this.review = review;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", password=" + password + ", name=" + name + ", phone=" + phone + ", nickName="
-				+ nickName + ", email=" + email ;
+				+ nickName + ", email=" + email + "]";
 	}
-
 	
+	
+
 
 }
