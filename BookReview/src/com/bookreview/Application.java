@@ -67,7 +67,7 @@ public class Application {
 		
 		
 		// true값 반환 시 로그인 성공
-		if(uc.signUp(id, new User(id, password, name, phone, nickName, email))){
+		if(uc.signUp(id, new User(password, name, phone, nickName, email))){
 			System.out.println("성공적으로 회원가입 완료하였습니다.");
 		} else {
 			System.out.println("중복된 아이디입니다. 다시 입력해주세요.");

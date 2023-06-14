@@ -1,5 +1,6 @@
 package com.kh.time;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -143,43 +144,31 @@ public class A_Date {
 	// 입력된 형식이 잘못된 경우 다시 입력받기
 	public void practice() {
 		Scanner sc = new Scanner(System.in);
-
-
-		boolean check = true;
-		while(check) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		Date result = null;
+		
+		while(true) {
+			System.out.print("생년월일 입력(yyyy/MM/dd): ");
+			String data = sc.nextLine();
 			try {
-				System.out.print("생년월일 입력(yyyy/MM/dd): ");
-				String birth = sc.nextLine();
+				result = sdf.parse(data);
+				break;
+			} catch(ParseException e) {}
 
-				String[] strArr = birth.split("/");
-
-				int year = Integer.parseInt(strArr[0]);
-				int month = Integer.parseInt(strArr[1]);
-				int date2 = Integer.parseInt(strArr[2]);
-
-				Calendar date = Calendar.getInstance();
-				date.set(year, month-1, date2);
-				Date d = new Date(date.getTimeInMillis());
-				
-				long timeInMillis = date.getTimeInMillis();
-				long second = timeInMillis/1000;
-				long minute = second/60;
-				long hour = minute/60;
-				long day = hour/24;
-				System.out.println("지금까지 : " + day +"일");
-				
-				SimpleDateFormat sdf = new SimpleDateFormat("태어난 요일 : E요일");
-				String formatDate = sdf.format(d);
-				System.out.println(formatDate);
-				
-				check=false;
-				
-			} catch(Exception e ) {
-				System.out.println("잘못 입력하였습니다. 다시 입력하세요.");
-			}
 		}
+		Calendar inputDate = Calendar.getInstance();
+		Calendar today = Calendar.getInstance();
+		
+		inputDate.setTime(result);
+		
+		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MM/dd은 E요일입니다.");
+		System.out.println(sdf2.format(result));
+		
+		long day = (today.getTimeInMillis() - inputDate.getTimeInMillis())/(1000*24*60*60);
+		System.out.println("태어난 날부터 지금까지 : " + day +"일 지났습니다.");
 	}
 }
+
 
 
 

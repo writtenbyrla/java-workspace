@@ -4,7 +4,6 @@ import java.util.List;
 
 public class User {
 
-	private String id;
 	private String password;
 	private String name;
 	private String phone;
@@ -13,33 +12,13 @@ public class User {
 	List<Review> review;
 	
 	public User() {}
-	
-	public User(String id, String password, String name, String phone, String nickName, String email) {
-		this.id = id;
+
+	public User(String password, String name, String phone, String nickName, String email) {
 		this.password = password;
 		this.name = name;
 		this.phone = phone;
 		this.nickName = nickName;
 		this.email = email;
-	}
-	
-	public User(String id, String password, String name, String phone, String nickName, String email,
-			List<Review> review) {
-		this.id = id;
-		this.password = password;
-		this.name = name;
-		this.phone = phone;
-		this.nickName = nickName;
-		this.email = email;
-		this.review = review;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public String getPassword() {
@@ -92,11 +71,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", password=" + password + ", name=" + name + ", phone=" + phone + ", nickName="
-				+ nickName + ", email=" + email + "]";
+		return "User [password=" + password + ", name=" + name + ", phone=" + phone + ", nickName=" + nickName
+				+ ", email=" + email + ", review=" + review + "]";
 	}
 	
-	
-
-
 }
