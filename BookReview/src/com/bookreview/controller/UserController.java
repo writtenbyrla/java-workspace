@@ -29,10 +29,10 @@ public class UserController {
 	}
 	
 	// 로그인
-	// id, password 입력받아 일치할 시에 회원의 닉네임 반환
+	// id, password 입력받아 일치할 시에 회원의 이름 반환
 	public String login(String id, String password) { // 로그인
 		if(map.containsKey(id) && map.get(id).getPassword().equals(password)) {
-			return map.get(id).getNickName();
+			return map.get(id).getName();
 		}
 		return null;
 	}
@@ -41,18 +41,13 @@ public class UserController {
 	// id, password 일치하면 새로운 비밀번호로 저장하고 true 반환
 	public boolean updatePassword(String id, String oldPw, String newPw) {
 		if(map.containsKey(id) && map.get(id).getPassword().equals(oldPw)) {
-			map.put(id, new User(newPw, map.get(id).getName(), map.get(id).getPhone(), map.get(id).getNickName(), map.get(id).getEmail()));
+			map.put(id, new User(newPw, map.get(id).getName(), map.get(id).getPhone(), map.get(id).getEmail()));
 			return true;
 		} return false;
 	}
 	
 	public void updatePhone(String id, String phone) {
-		map.put(id, new User(map.get(id).getPassword(), map.get(id).getName(), phone, map.get(id).getNickName(), map.get(id).getEmail()));
+		map.put(id, new User(map.get(id).getPassword(), map.get(id).getName(), phone, map.get(id).getEmail()));
 	}
-	
-	public void updateNickName(String id, String nickName) {
-		map.put(id, new User(map.get(id).getPassword(), map.get(id).getName(), map.get(id).getPhone(), nickName, map.get(id).getEmail()));
-	}
-
 }
 

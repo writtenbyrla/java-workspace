@@ -60,14 +60,12 @@ public class Application {
 		String name = sc.nextLine();
 		System.out.print("휴대폰번호 입력: ");
 		String phone = sc.nextLine();
-		System.out.print("닉네임 입력: ");
-		String nickName = sc.nextLine();
 		System.out.print("이메일 입력: ");
 		String email = sc.nextLine();
 		
 		
 		// true값 반환 시 로그인 성공
-		if(uc.signUp(id, new User(password, name, phone, nickName, email))){
+		if(uc.signUp(id, new User(password, name, phone, email))){
 			System.out.println("성공적으로 회원가입 완료하였습니다.");
 		} else {
 			System.out.println("중복된 아이디입니다. 다시 입력해주세요.");
@@ -138,8 +136,7 @@ public class Application {
 			System.out.println("***** 수정할 정보 선택 *****");
 			System.out.println("1. 비밀번호 수정");
 			System.out.println("2. 휴대폰번호 수정");
-			System.out.println("3. 닉네임 수정");
-			System.out.println("4. 회원 메뉴로 돌아가기");
+			System.out.println("3. 회원 메뉴로 돌아가기");
 			
 			System.out.print("메뉴 번호 입력 : ");
 			int menu = Integer.parseInt(sc.nextLine());
@@ -165,11 +162,6 @@ public class Application {
 				System.out.print("변경할 휴대폰번호 입력: ");
 				uc.updatePhone(id, sc.nextLine());
 				System.out.println("휴대폰번호 변경에 성공하였습니다.");
-				break;
-			case 3: 
-				System.out.print("변경할 닉네임 입력: ");
-				uc.updateNickName(id, sc.nextLine());
-				System.out.println("닉네임 변경에 성공하였습니다.");
 				break;
 			default: 
 				throw new Exception();

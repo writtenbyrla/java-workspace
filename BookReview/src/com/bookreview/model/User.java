@@ -7,17 +7,15 @@ public class User {
 	private String password;
 	private String name;
 	private String phone;
-	private String nickName;
 	private String email;
 	List<Review> review;
 	
 	public User() {}
 
-	public User(String password, String name, String phone, String nickName, String email) {
+	public User(String password, String name, String phone, String email) {
 		this.password = password;
 		this.name = name;
 		this.phone = phone;
-		this.nickName = nickName;
 		this.email = email;
 	}
 
@@ -45,14 +43,6 @@ public class User {
 		this.phone = phone;
 	}
 
-	public String getNickName() {
-		return nickName;
-	}
-
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -71,8 +61,10 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [password=" + password + ", name=" + name + ", phone=" + phone + ", nickName=" + nickName
-				+ ", email=" + email + ", review=" + review + "]";
+		return "User [password=" + password + ", name=" + name + ", phone=" + phone + ", email=" + email + ", review="
+				+ review + "]";
 	}
+
+
 	
 }
