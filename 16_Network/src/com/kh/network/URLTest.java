@@ -30,7 +30,7 @@ public class URLTest {
 	public void method1() {
 		
 		try {
-			URL url = new URL("https:www.youtube.com/result?search_query=여행");
+			URL url = new URL("https://www.youtube.com/result?search_query=여행");
 			System.out.println("url.getProtocol() : " + url.getProtocol());
 			System.out.println("url.getHost() : "+ url.getHost() );
 			System.out.println("url.getDefaultPort() : " + url.getDefaultPort());
