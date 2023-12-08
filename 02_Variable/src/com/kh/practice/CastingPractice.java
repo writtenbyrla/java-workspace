@@ -22,7 +22,6 @@ public class CastingPractice {
 		
 	}
 	
-	
 	public void method2() {
 		Scanner sc = new Scanner(System.in);
 		

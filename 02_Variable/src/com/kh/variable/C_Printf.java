@@ -7,6 +7,7 @@ public class C_Printf {
 		// System.out.print(출력하고자 하는 값); - 출력만 함(줄바꿈 발생x)
 		// System.out.println(출력하고자 하는 값); - 출력 후 줄바꿈 발생
 		
+		System.out.print("hello");
 		System.out.print("hello\n");
 		System.out.println("hello");
 		
@@ -34,6 +35,7 @@ public class C_Printf {
 		System.out.printf("%5d\n", iNum1); 
 		System.out.printf("%5d\n", 250); 
 		System.out.printf("%-5d\n", -12); 
+		System.out.printf("%5d\n", -12); 
 		
 		System.out.println("-------------------");
 		
@@ -41,8 +43,10 @@ public class C_Printf {
 		double dNum2 = 4.53;
 		
 		// 무조건 소수점 아래 여섯째 자리까지 보여줌
+		System.out.printf("%f", 5.252363747);
 		System.out.printf("%f\t%f\n", dNum1, dNum2);
 		System.out.printf("%.3f\t%.2f\n", dNum1, dNum2); // %.2f 소수점 아래 둘째자리까지
+	
 		
 		System.out.println("-------------------");
 		
